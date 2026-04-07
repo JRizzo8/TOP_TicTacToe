@@ -69,13 +69,15 @@ const displayController = (() => {
 })();
 
 const gameController = () => {
-    gameOver = false;
     gameRound = 0;
+    const playRound = () => {
+    gameOver = false;
     player1 = playerController.getPlayers().player1;
     player2 = playerController.getPlayers().player2;
     currentPlayer = player1;
-    const playRound = () => {
-
     };
-    return {playRound};
-};  
+    const resetRound = () => {
+        gameRound = 0;
+    };
+    return {playRound, resetRound};
+};
