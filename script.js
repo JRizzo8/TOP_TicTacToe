@@ -87,3 +87,6 @@ const gameController = (() => {
     };
     return {getRound, increaseRound, resetRound, getCurrentPlayer, changeCurrentPlayer, changeGameState};
 })();  
+const displayController = (() => {
+
+})();
