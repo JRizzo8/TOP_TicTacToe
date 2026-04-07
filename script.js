@@ -64,29 +64,18 @@ const playerController = (() => {
     };
     return {getPlayers,increasePlayerScore, getScore, changePlayerName, changePlayerMarks, resetPlayerScores};
 })();
-
-const gameController = (() => {
-    let gameOver = false;
-    let gameRound = 0;
-    let player1 = playerController.getPlayers().player1;
-    let player2 = playerController.getPlayers().player2;
-    let currentPlayer = player1;
-    const getRound = () => gameRound;
-    const increaseRound = () => gameRound++;
-    const resetRound = () => gameRound = 0;
-    const getCurrentPlayer = () => currentPlayer;
-    const changeCurrentPlayer = () => {
-        currentPlayer === player1 
-        ? currentPlayer = player2
-        : currentPlayer = player1;
-    };
-    const changeGameState = () =>{
-        gameOver === false 
-        ? gameOver = true 
-        : gameOver = false;
-    };
-    return {getRound, increaseRound, resetRound, getCurrentPlayer, changeCurrentPlayer, changeGameState};
-})();  
 const displayController = (() => {
 
 })();
+
+const gameController = () => {
+    gameOver = false;
+    gameRound = 0;
+    player1 = playerController.getPlayers().player1;
+    player2 = playerController.getPlayers().player2;
+    currentPlayer = player1;
+    const playRound = () => {
+
+    };
+    return {playRound};
+};  
