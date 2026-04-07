@@ -28,16 +28,62 @@ const gameBoard = (() => {
         }
         return false;
     };
-    const checkForDraw = () => {
-       if (board.every(row => row.every(cell => ""))) return true;
+    return {getBoard, placePlayerMark, resetBoard, checkForWinner};
+})();
+const playerController = (() => {
+    const Players = {
+        player1: {name: "player1", mark: "X", score: 0},
+        player2: {name: "player2", mark: "O", score: 0}
     };
-    return {getBoard, placePlayerMark, resetBoard, checkForWinner, checkForDraw};
+    const getPlayers = () => Players;
+    const increasePlayerScore = (player) => {
+        player.score++;
+    };
+    const getScore = (player) => player.score;
+    const resetPlayerScores = () => {
+        Players.forEach( player => {
+            player.score = 0;
+        })
+    };
+    const changePlayerName =(player, newName) => {
+        player.name = newName;
+    };
+    const changePlayerMarks = () => {
+        Players.forEach (player => {
+            switch (player.mark){
+                case "X":
+                    player.mark = "O"
+                    break;
+                case "O":
+                    player.mark = "X"
+                    break;
+                default:
+                    break;
+            };
+        });
+    };
+    return {getPlayers,increasePlayerScore, getScore, changePlayerName, changePlayerMarks, resetPlayerScores};
 })();
 
-console.table(gameBoard.getBoard());
-
-
-const game = (() => {
-
-
-})();
+const gameController = (() => {
+    let gameOver = false;
+    let gameRound = 0;
+    let player1 = playerController.getPlayers().player1;
+    let player2 = playerController.getPlayers().player2;
+    let currentPlayer = player1;
+    const getRound = () => gameRound;
+    const increaseRound = () => gameRound++;
+    const resetRound = () => gameRound = 0;
+    const getCurrentPlayer = () => currentPlayer;
+    const changeCurrentPlayer = () => {
+        currentPlayer === player1 
+        ? currentPlayer = player2
+        : currentPlayer = player1;
+    };
+    const changeGameState = () =>{
+        gameOver === false 
+        ? gameOver = true 
+        : gameOver = false;
+    };
+    return {getRound, increaseRound, resetRound, getCurrentPlayer, changeCurrentPlayer, changeGameState};
+})();  
