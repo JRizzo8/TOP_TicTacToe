@@ -14,7 +14,7 @@ const gameBoard = (() => {
         };
     };
     const resetBoard = () => {
-        board.forEach(row => row.fill(" "));
+        board.forEach(row => row.fill(""));
     };
     const checkForWinner = (board, player) => {
         for (let i = 0; i < 3; i++) {
