@@ -14,7 +14,7 @@ const gameBoard = (() => {
         };
     };
     const resetBoard = () => {
-        board.forEach(row => row.fill(" "));
+        board.forEach(row => row.fill(""));
     };
     const checkForWinner = (board, player) => {
         for (let i = 0; i < 3; i++) {
@@ -92,36 +92,34 @@ const gameController = (() => {
             while (placeMarker === false);
             console.table(gameBoard.getBoard());
             turnCount++;
-            console.log(turnCount);
             if (turnCount > 5 && turnCount < 9) {
                 if (gameBoard.checkForWinner(gameBoard.getBoard(), playerController.getCurrentPlayer())){
-                    gameRound++;
                     playerController.getCurrentPlayer().score++;
                     console.log(playerController.getCurrentPlayer().name + " is the winner! Their score is: " 
                         + playerController.getCurrentPlayer().score);
                     turnCount = 0;
+                    gameRound++;
                     gameBoard.resetBoard();
                 };
             } else if (turnCount == 9) {
                 if (gameBoard.checkForWinner(gameBoard.getBoard(), playerController.getCurrentPlayer())){
-                    gameRound++;
                     playerController.getCurrentPlayer().score++;
                     console.log(playerController.getCurrentPlayer().name + " is the winner! Their score is " 
                         + playerController.getCurrentPlayer().score);
                     turnCount = 0;
+                    gameRound++;
                     gameBoard.resetBoard();
                 } else {
                     console.log("Its a draw!" + " Player1 score: " + player1.score + " Player2 score: " + player2.score);
-                    gameRound++;
                     turnCount = 0;
+                    gameRound++;
                     gameBoard.resetBoard();
                 };
             };
             playerController.changeCurrentPlayer();
-            console.log(gameRound);
-            if (gameRound == 10) {
+            if (gameRound ==10) {
                 gameOver = true;
-            };
+            }
         };
     };
     return {playTenRounds};
