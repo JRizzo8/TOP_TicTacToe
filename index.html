@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="borders.css">
     <title>TOP Tic-Tic-Toe</title>
 </head>
 <body>
     <page-container>
         <header>
-
+            <h1>Tic-Tac-Toe</h1>
+            <button class="startBtn">Play Game</button>
         </header>
-
         <game-container>
-
+            <game-board>
+                <game-square data-row="0" data-col="0" id="border00"></game-square>
+                <game-square data-row="0" data-col="1" id="border01"></game-square>
+                <game-square data-row="0" data-col="2" id="border02"></game-square>
+                <game-square data-row="1" data-col="0" id="border10"></game-square>
+                <game-square data-row="1" data-col="1" id="border11"></game-square>
+                <game-square data-row="1" data-col="2" id="border12"></game-square>
+                <game-square data-row="2" data-col="0" id="border20"></game-square>
+                <game-square data-row="2" data-col="1" id="border21"></game-square>
+                <game-square data-row="2" data-col="2" id="border22"></game-square>
+            </game-board>
         </game-container>
         <footer>
             

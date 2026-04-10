@@ -1,0 +1,39 @@
+#border00 {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#border01 {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+#border02{
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#border10{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#border11{
+    border: 1px solid black;
+}
+#border12{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#border20{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+#border21{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#border22{
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
