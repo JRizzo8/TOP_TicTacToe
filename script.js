@@ -85,7 +85,6 @@ const gameController = (() => {
         return Math.floor(Math.random() * 3);
     }
     const playTenRounds = () => {
-        while (!gameOver){
             do {   
                 placeMarker = gameBoard.placePlayerMark(getRandomInt(), getRandomInt()
                 , playerController.getCurrentPlayer());} 
@@ -121,12 +120,9 @@ const gameController = (() => {
                 gameOver = true;
             }
         };
-    };
     return {playTenRounds};
 })();
 
 const displayController = (() => {
 
 })();
-
-gameController.playTenRounds();

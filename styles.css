@@ -1,0 +1,6 @@
+page-container {
+    height: 100vh;
+    max-width: 800px;
+    display: grid;
+    grid-template-rows: minmax(30px, 30%) minmax(fit-content, 70%) minmax(30px, 30%);
+};
