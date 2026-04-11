@@ -77,11 +77,13 @@ const gameController = (() => {
     gameOver = false;
     player1 = playerController.getPlayers()[0];
     player2 = playerController.getPlayers()[1];
+    const resetGameRound = () => {
+        gameRound = 0;
+    }
     const playRound = (row, col) => { 
             attmptTrn = gameBoard.placePlayerMark(row, col, playerController.getCurrentPlayer());
             if (!attmptTrn) {
-                console.prompt("Please choose an empty square");
-
+                console.prompt("Scoundrel! Try Choosing an Empty Square!");
             };
             
             turnCount++;
@@ -109,7 +111,7 @@ const gameController = (() => {
             };
             playerController.changeCurrentPlayer();
         };
-    return {playRound}
+    return {playRound, resetGameRound}
 })();
 
 const displayController = (() => {
