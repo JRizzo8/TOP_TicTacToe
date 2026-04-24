@@ -11,7 +11,7 @@
     <page-container>
         <header>
             <h1>Tic-Tac-Toe</h1>
-            <button class="startBtn">Play Game</button>
+            <button class="playBtn">Play Game</button>
         </header>
         <game-container>
             <game-board>
@@ -26,8 +26,42 @@
                 <game-square data-row="2" data-col="2" id="border22" class="cell"></game-square>
             </game-board>
         </game-container>
+
+
+        <!-- modal dialogs -->
+        <dialog class="gameStartDialog">
+            <button type="button" id="startDialogCloseBtn">X</button>
+            <h1>Welcome to Tic-Tac-Toe!</h1>
+            <p>Choose Player Options</p>
+            <form class="startForm">
+                <form-left>
+                    <!--<label for="player1AiMode">Human Player 1</label><br>
+                    <input type="checkbox" id="player1AiMode"><br><br> -->
+                    <label for="player1NameInput">Player 1 Name</label><br>
+                    <input type="text" id="player1NameInput">
+                </form-left>
+                <form-right>
+                    <!--<label for="player2AiMode">Human Player 2</label><br>
+                    <input type="checkbox" id="player2AiMode"><br><br>-->
+                    <label for="player2NameInput">Player 2 Name</label><br>
+                    <input type="text" id="player2NameInput">
+                </form-right>
+                <input type="submit" id="submitPlayerOptions" value="Play">
+            </form>
+        </dialog>
+        <dialog class="endGameDialog">
+            <h1>Game Over!</h1>
+            <h1 class="endGameText"></h1>
+            <endButtons-container>
+                <button type="button" class="playAgainBtn">Play Again</button><button type="button" class="resetBtn">Reset Game</button>
+            </endButtons-container>
+        </dialog>
+
+
+
+
         <footer>
-            
+            <button type="button" class="resetBtn">Reset Game</button>
         </footer>
     </page-container>
     <script src="script.js"></script>
