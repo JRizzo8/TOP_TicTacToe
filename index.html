@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="borders.css">
+
     <title>TOP Tic-Tic-Toe</title>
 </head>
 <body>
@@ -12,6 +14,20 @@
         <header>
             <h1>Tic-Tac-Toe</h1>
             <button class="playBtn">Play Game</button>
+            <Score-board>
+                <player1-score>
+                    <h2>Player 1 Score</h2>
+                    <h3 class="player1UiScore">0</h3>
+                </player1-score>
+                <game-Rounds>
+                    <h2>Game Rounds</h2>
+                    <h3 class="uiGameRounds">0</h3>
+                </game-Rounds>
+                <player2-score>
+                    <h2>Player 2 Score</h2>
+                    <h3 class="player2UiScore">0</h3>
+                </player2-score>
+            </Score-board>
         </header>
         <game-container>
             <game-board>
@@ -30,23 +46,29 @@
 
         <!-- modal dialogs -->
         <dialog class="gameStartDialog">
-            <button type="button" id="startDialogCloseBtn">X</button>
-            <h1>Welcome to Tic-Tac-Toe!</h1>
+            <button type="button" class="startDialogCloseBtn">X</button>
+            <h1>Welcome</h1>
             <p>Choose Player Options</p>
             <form class="startForm">
-                <form-left>
-                    <!--<label for="player1AiMode">Human Player 1</label><br>
-                    <input type="checkbox" id="player1AiMode"><br><br> -->
-                    <label for="player1NameInput">Player 1 Name</label><br>
-                    <input type="text" id="player1NameInput">
+                <form-left class="formLeft">
+                    <ai-checkbox>
+                        <input type="checkbox" id="player1AiMode">
+                        <label for="player1AiMode">Check here for Ai Player 1</label>
+                    </ai-checkbox>
+                    <label for="player1NameInput">Player 1 Name</label>
+                    <input type="text" id="player1NameInput" class="player1NameBox">
                 </form-left>
-                <form-right>
-                    <!--<label for="player2AiMode">Human Player 2</label><br>
-                    <input type="checkbox" id="player2AiMode"><br><br>-->
-                    <label for="player2NameInput">Player 2 Name</label><br>
-                    <input type="text" id="player2NameInput">
+                <form-right class="formRight">
+                    <ai-checkbox>
+                        <input type="checkbox" id="player2AiMode">
+                        <label for="player2AiMode">Check here for Ai Player 2</label>
+                    </ai-checkbox>
+                    <label for="player2NameInput">Player 2 Name</label>
+                    <input type="text" id="player2NameInput" class="player2NameBox">
                 </form-right>
-                <input type="submit" id="submitPlayerOptions" value="Play">
+                <form-btn class="formSubmit">
+                    <input type="submit" class="submitPlayerOptions" value="Play">
+                </form-btn>
             </form>
         </dialog>
         <dialog class="endGameDialog">
@@ -56,12 +78,8 @@
                 <button type="button" class="playAgainBtn">Play Again</button><button type="button" class="resetBtn">Reset Game</button>
             </endButtons-container>
         </dialog>
-
-
-
-
         <footer>
-            <button type="button" class="resetBtn">Reset Game</button>
+            <button type="button" class="resetBtn" id="footerResetBtn">Reset Game</button>
         </footer>
     </page-container>
     <script src="script.js"></script>
